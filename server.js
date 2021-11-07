@@ -9,7 +9,7 @@ connectDB()
 app.use(express.json())
 // CRUS
 // add user
-app.post('/user/post',async(req,res)=>
+app.post('/user/post/',async(req,res)=>
 {
     let {name,email,number}=req.body
 try {
@@ -41,7 +41,7 @@ app.put('/user/put/:id',async(req,res)=>{
     }
 })
 // get user
-app.get('/user/get',async(req,res)=>{
+app.get('/user/get/',async(req,res)=>{
     try {
       let getUser= await User.find()
       res.send(getUser)
